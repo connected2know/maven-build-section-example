@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>example.project.maven</groupId>
+  <artifactId>MavenBuildSectionExample</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <description>Maven build section example</description>
+
+  <name>MavenBuildSectionExample</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  
+  <build>
+	<defaultGoal></defaultGoal>  
+  	<extensions></extensions>
+	<directory></directory>
+	<filters></filters>
+	<finalName></finalName>
+	<outputDirectory></outputDirectory>
+	<pluginManagement></pluginManagement>
+    <plugins></plugins>
+    <resources></resources>
+    <scriptSourceDirectory></scriptSourceDirectory>
+    <sourceDirectory></sourceDirectory>
+    <testOutputDirectory></testOutputDirectory>
+    <testResources></testResources> 
+    <testSourceDirectory></testSourceDirectory>
+  </build>
+  
+  <profiles>
+  	<profile>
+  		<build>
+  			<defaultGoal></defaultGoal>
+  			<directory></directory>
+  			<filters></filters>
+  			<finalName></finalName>
+  			<pluginManagement></pluginManagement>
+  			<plugins></plugins>
+  			<resources></resources>
+  			<testResources></testResources>
+  		</build>
+  	</profile>
+  </profiles>
+
+</project>
