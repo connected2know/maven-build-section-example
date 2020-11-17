@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
@@ -25,20 +25,84 @@
   </dependencies>
   
   <build>
-	<defaultGoal></defaultGoal>  
-  	<extensions></extensions>
-	<directory></directory>
-	<filters></filters>
-	<finalName></finalName>
-	<outputDirectory></outputDirectory>
-	<pluginManagement></pluginManagement>
-    <plugins></plugins>
-    <resources></resources>
-    <scriptSourceDirectory></scriptSourceDirectory>
-    <sourceDirectory></sourceDirectory>
-    <testOutputDirectory></testOutputDirectory>
-    <testResources></testResources> 
-    <testSourceDirectory></testSourceDirectory>
+	<defaultGoal>clean install</defaultGoal>  
+  	<extensions>
+  		<extension>
+  			<groupId>junit</groupId>
+  			<artifactId>junit</artifactId>
+  			<version>3.8.1</version>
+  		</extension>
+  	</extensions>
+  	
+	<directory>/target</directory>
+	
+	<resources>
+		<resource>
+			<directory>src/main/resources/</directory>
+		    <filtering>true</filtering>
+		    <includes>
+		    	<include>abc</include>
+		    </includes>
+		    <excludes>
+		    	<exclude>bcv</exclude>
+		    </excludes>
+		    <targetPath>/target</targetPath>
+		</resource>
+	</resources>
+	
+	<filters>
+		<filter>src/main/resources/abc.properties</filter>
+	</filters>
+	
+	<finalName>${artifactId}-${version}</finalName>
+	<outputDirectory>/target/classes/</outputDirectory>
+	<pluginManagement>
+		<plugins>
+			<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-compiler-plugin</artifactId>
+	        <configuration>
+				<source>1.8</source>
+				<target>1.8</target>
+	        </configuration>
+			</plugin>
+		</plugins>
+	</pluginManagement>
+	
+	
+    <plugins>
+     	<plugin>
+               <groupId>org.apache.maven.plugins</groupId> 
+               <artifactId>maven-javadoc-plugin</artifactId>
+               <configuration>
+                   <skip>true</skip>
+                   <show>public</show>
+                   <failOnError>false</failOnError>
+                   <level>public</level>
+                   <nodeprecated>true</nodeprecated>
+                   <quiet>true</quiet>
+                   <verbose>false</verbose>
+               </configuration>
+          </plugin>
+    </plugins>
+    
+    <scriptSourceDirectory>/src/main/scripts</scriptSourceDirectory>
+    <sourceDirectory>src/main/java/</sourceDirectory>
+    <testOutputDirectory>/target/test-classes</testOutputDirectory>
+    <testResources>
+    	<testResource>
+    		<directory>src/main/resources/</directory>
+		    <filtering>true</filtering>
+		    <includes>
+		    	<include>abc</include>
+		    </includes>
+		    <excludes>
+		    	<exclude>bcv</exclude>
+		    </excludes>
+		    <targetPath>/target</targetPath>
+    	</testResource>
+    </testResources> 
+    <testSourceDirectory>src/test/java/</testSourceDirectory>
   </build>
   
   <profiles>
